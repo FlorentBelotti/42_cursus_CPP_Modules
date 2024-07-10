@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 11:13:49 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/07/10 11:54:06 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/07/10 15:21:51 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,28 +18,31 @@ void Phonebook::addContact() {
 
 	if (contactCount >= 8) {
 		std::cout << "Phonebook: more than 8 contact, replacing the oldest one" << std::endl;
-		for (int i = 0; i < 7; ++i)
+		for (int i = 0; i < 7; ++i) {
 			contacts[i] = contacts[i + 1];
+			contacts[i].setIndex(i);
+		}
 		contactCount = 7;
 	}
 	std::cout << "Phonebook: enter contact's first name..." << std::endl;
 	std::getline(std::cin, userInput);
-	//firstname function
+	newContact.setFirstName(userInput);
 	std::cout << "Phonebook: enter contact's last name..." << std::endl;
 	std::getline(std::cin, userInput);
-	//lastname function
+	newContact.setLastName(userInput);
 	std::cout << "Phonebook: enter contact's nick name..." << std::endl;
 	std::getline(std::cin, userInput);
-	//nickename function
+	newContact.setNickName(userInput);
 	std::cout << "Phonebook: enter contact's darkest secret..." << std::endl;
 	std::getline(std::cin, userInput);
-	//secret function
+	newContact.setDarkestSecret(userInput);
 	std::cout << "Phonebook: enter contact's phone number..." << std::endl;
 	std::getline(std::cin, userInput);
-	//phone function
-    contacts[contactCount] = newContact;
-    contactCount++;
-    std::cout << "Phonebook: contact added successfully." << std::endl;
+	newContact.setPhoneNumber(userInput);
+	newContact.setIndex(contactCount);
+	contacts[contactCount] = newContact;
+	contactCount++;
+	std::cout << "Phonebook: contact added successfully." << std::endl;
 }
 
 void getUserInput(void) {
