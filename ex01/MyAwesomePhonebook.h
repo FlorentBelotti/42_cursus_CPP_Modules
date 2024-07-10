@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   MyAwesomePhonebook.h                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/08 21:40:20 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/07/09 22:26:08 by fbelotti         ###   ########.fr       */
+/*   Created: 2024/07/10 01:16:41 by fbelotti          #+#    #+#             */
+/*   Updated: 2024/07/10 01:39:10 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <cctype>
+#ifndef MYAWESOMEPHONEBOOK_H
+#define MYAWESOMEPHONEBOOK_H
 
-int	main(int ac, char **av) {
-	if (ac <= 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	for (int i = 1; i < ac; ++i) {
-		for (int j = 0; av[i][j]; ++j){
-			std::cout << static_cast<char>(std::toupper(av[i][j]));
-		}
-		if (i < ac - 1)
-			std::cout << " ";
-	}
-}
+/* HEADERS */
+
+#include <string>
+#include <iostream>
+
+/* CLASSES */
+
+#include "Contact.hpp"
+#include "Phonebook.hpp"
+
+#endif
