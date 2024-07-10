@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 01:14:41 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/07/10 15:20:14 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/07/11 00:11:50 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,14 @@ class Contact {
 	std::string getNickName() const { return nickName; }
 	std::string getDarkestSecret() const { return darkestSecret; }
 	std::string getPhoneNumber() const { return phoneNumber; }
+	int			getIndex() const { return index; }
 
-	int getIndex() const { return index; }
+	void displayContactsInfos() const {
+		std::cout << index << " | ";
+		std::cout << firstName << " | ";
+		std::cout << lastName << " | ";
+		std::cout << nickName << std::endl;
+	}
 };
 
 #endif
