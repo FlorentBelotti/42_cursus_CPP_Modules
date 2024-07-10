@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 01:10:03 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/07/10 01:31:45 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/07/10 11:53:10 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@
 
 class Phonebook {
 	private:
-		Contact contact[8];
+		Contact contacts[8];
+		int		contactCount;
 	public:
+		void addContact();
 };
 
 #endif
