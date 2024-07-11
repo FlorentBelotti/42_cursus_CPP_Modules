@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 01:14:41 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/07/11 00:11:50 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/07/11 22:45:57 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,13 @@ class Contact {
 	std::string getPhoneNumber() const { return phoneNumber; }
 	int			getIndex() const { return index; }
 
-	void displayContactsInfos() const {
-		std::cout << index << " | ";
-		std::cout << firstName << " | ";
-		std::cout << lastName << " | ";
-		std::cout << nickName << std::endl;
-	}
+	void displaySummary() const;
+
+	void displayContactsInfos() const;
+
+	private:
+
+	std::string truncateString(const std::string& str) const;
 };
 
 #endif

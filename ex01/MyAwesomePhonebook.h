@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 01:16:41 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/07/11 00:44:31 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/07/11 22:24:39 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <sstream>
+#include <iomanip>
 
 /* CLASSES */
 

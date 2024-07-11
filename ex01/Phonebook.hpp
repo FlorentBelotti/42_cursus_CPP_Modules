@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 01:10:03 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/07/11 00:04:55 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/07/11 23:23:59 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Phonebook {
 
 		void addContact();
 		void searchEngine() const;
-		void printAllContactsInfos() const;
+		int printContactsInfos() const;
 };
 
 #endif
