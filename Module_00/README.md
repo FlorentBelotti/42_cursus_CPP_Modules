@@ -16,7 +16,6 @@
             <li><a href="#exercise-00-megaphone">Exercise 00: Megaphone</a></li>
             <li><a href="#exercise-01-my-awesome-phonebook">Exercise 01: My Awesome PhoneBook</a></li>
             <li><a href="#exercise-02-your-dream-job">Exercise 02: Your Dream Job</a></li>
-            <li><a href="#submission-and-peer-evaluation">Submission and Peer-Evaluation</a></li>
         </ul>
         <section id="introduction">
             <h2>Introduction</h2>
@@ -27,6 +26,7 @@
                 to introduce you to Object-Oriented Programming (OOP) using C++. Although C++ is a
                 complex language, for this course, you will adhere to the C++98 standard.
             </p>
+            <p><strong>Project Objective:</strong> Introduce basic C++ concepts and practices through practical exercises.</p>
         </section>
         <section id="exercise-00-megaphone">
             <h2>Exercise 00: Megaphone</h2>
@@ -42,6 +42,7 @@
                 * LOUD AND UNBEARABLE FEEDBACK NOISE *
                 $>
             </pre>
+            <p><strong>Concepts Used:</strong> Standard Input and Output streams, basic string manipulation.</p>
         </section>
         <section id="exercise-01-my-awesome-phonebook">
             <h2>Exercise 01: My Awesome PhoneBook</h2>
@@ -64,18 +65,14 @@
                 <li><strong>SEARCH</strong>: Display a list of contacts and allows the user to view contact details.</li>
                 <li><strong>EXIT</strong>: Quit the program.</li>
             </ul>
+            <p><strong>Concepts Used:</strong> Classes, member functions, arrays, basic I/O operations, string handling.</p>
         </section>
         <section id="exercise-02-your-dream-job">
             <h2>Exercise 02: Your Dream Job</h2>
             <p>
                 Recreate a missing file for a banking application. Implement the missing <code>Account.cpp</code> based on the provided <code>Account.hpp</code> and log files.
             </p>
-        </section>
-        <section id="submission-and-peer-evaluation">
-            <h2>Submission and Peer-Evaluation</h2>
-            <p>
-                Submit your work on your Git repository as usual. Only the work on your repository will be evaluated. Ensure that your directory and file names conform to the requirements.
-            </p>
+            <p><strong>Concepts Used:</strong> Classes, constructors, destructors, member functions, file I/O.</p>
         </section>
     </main>
 </body>
