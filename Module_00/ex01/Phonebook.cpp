@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 11:13:49 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/07/11 23:27:52 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/07/17 10:43:53 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,64 @@
 
 void Phonebook::addContact() {
 	std::string userInput;
-	Contact		newContact;
-
+	Contact newContact;
 	std::cout << "Phonebook: adding contact..." << std::endl;
 	if (contactCount >= 8) {
 		std::cout << "Phonebook: more than 8 contact, replacing the oldest one" << std::endl;
 		for (int i = 0; i < 7; i++) {
 			contacts[i] = contacts[i + 1];
 			contacts[i].setIndex(i + 1);
-		}
-		contactCount = 7;
+	}
+	contactCount = 7;
 	}
 	std::cout << "Phonebook: enter contact's first name..." << std::endl;
-	std::getline(std::cin, userInput);
-	newContact.setFirstName(userInput);
+	while (true) {
+		std::getline(std::cin, userInput);
+		if (!userInput.empty()) {
+			newContact.setFirstName(userInput);
+			break;
+		}
+		else
+			std::cout << "Phonebook : Input cannot be empty. Please enter contact's first name: " << std::endl;
+	}
 	std::cout << "Phonebook: enter contact's last name..." << std::endl;
-	std::getline(std::cin, userInput);
-	newContact.setLastName(userInput);
+	while (true) {
+		std::getline(std::cin, userInput);
+		if (!userInput.empty()) {
+			newContact.setLastName(userInput);
+			break;
+		} else {
+			std::cout << "Phonebook : Input cannot be empty. Please enter contact's last name: " << std::endl;
+		}
+	}
 	std::cout << "Phonebook: enter contact's nick name..." << std::endl;
-	std::getline(std::cin, userInput);
-	newContact.setNickName(userInput);
+	while (true) {
+		std::getline(std::cin, userInput);
+		if (!userInput.empty()) {
+			newContact.setNickName(userInput);
+			break;
+		} else
+			std::cout << "Input cannot be empty. Please enter contact's nick name: " << std::endl;
+	}
 	std::cout << "Phonebook: enter contact's darkest secret..." << std::endl;
-	std::getline(std::cin, userInput);
-	newContact.setDarkestSecret(userInput);
+	while (true) {
+		std::getline(std::cin, userInput);
+		if (!userInput.empty()) {
+			newContact.setDarkestSecret(userInput);
+			break;
+		} else {
+			std::cout << "Phonebook : Input cannot be empty. Please enter contact's darkest secret: " << std::endl;
+		}
+	}
 	std::cout << "Phonebook: enter contact's phone number..." << std::endl;
-	std::getline(std::cin, userInput);
-	newContact.setPhoneNumber(userInput);
+	while (true) {
+		std::getline(std::cin, userInput);
+		if (!userInput.empty()) {
+			newContact.setPhoneNumber(userInput);
+			break;
+		} else
+			std::cout << "Phonebook : Input cannot be empty. Please enter contact's phone number: " << std::endl;
+	}
 	newContact.setIndex(contactCount + 1);
 	contacts[contactCount] = newContact;
 	contactCount++;
