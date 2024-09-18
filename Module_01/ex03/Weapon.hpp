@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 17:56:26 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/09/18 13:52:42 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/09/18 14:30:26 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Weapon {
 	std::string type;
 
 	public:
-	Weapon(std::string type);
+	Weapon(std::string type_of_weapon);
 	~Weapon();
 
 	const std::string& getType() const;
