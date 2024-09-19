@@ -6,11 +6,11 @@
 #    By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/17 16:56:14 by fbelotti          #+#    #+#              #
-#    Updated: 2024/09/20 01:10:57 by fbelotti         ###   ########.fr        #
+#    Updated: 2024/09/20 01:11:06 by fbelotti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Fixed_1
+NAME = Fixed_2
 AUTHOR = Florent Belotti
 
 CXX = c++
