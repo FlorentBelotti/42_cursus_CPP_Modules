@@ -6,11 +6,11 @@
 #    By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/10 23:06:19 by fbelotti          #+#    #+#              #
-#    Updated: 2024/09/19 22:19:59 by fbelotti         ###   ########.fr        #
+#    Updated: 2024/09/19 22:20:15 by fbelotti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Moar_brainz
+NAME = Hi_this_is_brain
 AUTHOR = Florent Belotti
 
 CXX = c++
