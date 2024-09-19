@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 18:07:45 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/09/19 18:32:35 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/09/19 23:55:48 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <math.h>
 
 #ifndef FIXED_HPP
 #define FIXED_HPP
@@ -30,7 +31,7 @@ class Fixed {
 	Fixed(const float floatValue);
 
 	// Constructor copy
-	Fixed(Fixed &copy);
+	Fixed(const Fixed &copy);
 
 	// Destructor
 	~Fixed();
@@ -39,12 +40,12 @@ class Fixed {
 	Fixed &operator=(const Fixed &other);
 
 	// Acess
-	int	getRawBits(void) const;
+	int	getRawBits() const;
 	void setRawBits(int const rawIntValue);
 
 	// Conversion
-	float toFloat(void) const;
-	int toInt(void) const;
+	float toFloat() const;
+	int toInt() const;
 };
 
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
