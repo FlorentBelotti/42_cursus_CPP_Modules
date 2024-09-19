@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 18:07:45 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/09/20 00:19:17 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/09/19 23:55:48 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,19 +27,27 @@ class Fixed {
 
 	// Constructor
 	Fixed();
+	Fixed(const int intValue);
+	Fixed(const float floatValue);
 
 	// Constructor copy
 	Fixed(const Fixed &copy);
 
-	// Operator
-	Fixed &operator=(const Fixed &other);
-
 	// Destructor
 	~Fixed();
 
+	// Operator
+	Fixed &operator=(const Fixed &other);
+
 	// Acess
-	int getRawBits() const;
+	int	getRawBits() const;
 	void setRawBits(int const rawIntValue);
+
+	// Conversion
+	float toFloat() const;
+	int toInt() const;
 };
+
+std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
 
 #endif
