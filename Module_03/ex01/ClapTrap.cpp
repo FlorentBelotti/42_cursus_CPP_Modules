@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 11:14:05 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/09/26 15:28:39 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/09/26 15:55:17 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ void ClapTrap::attack(const std::string& target) {
 	if (_energyPoints > 0) {
 		std::cout << GREEN << "ClapTrap " << _name << RESET_COLOR << " attacks " << target << ", causing " << this->_attackDamage << " points of damage!" << std::endl;
 		this->_energyPoints -= 1;
+		std::cout << GREEN << "ClapTrap " << getName() << YELLOW << " " << getEnergyPoints() << " energy points remaining." << RESET_COLOR << std::endl;
 	}
 	else {
 		std::cout << GREEN << "ClapTrap " << _name << RESET_COLOR << " has 0 energy point and can't attack " << std::endl;
@@ -87,9 +88,11 @@ void ClapTrap::beRepaired(unsigned int amount) {
 		std::cout << GREEN << "ClapTrap " << _name << RESET_COLOR << " repairs himself of " << amount << " hit points " << std::endl;
 		this->_energyPoints -= 1;
 		this->_hitPoints += amount;
+		std::cout << GREEN << "ClapTrap " << getName() << YELLOW << " " << getEnergyPoints() << " energy points remaining." << RESET_COLOR << std::endl;
+		std::cout << GREEN << "ClapTrap " << getName() << YELLOW << " " << getHitPoints() << " Hit points remaining." << RESET_COLOR << std::endl;
 	}
 	else {
-		std::cout << GREEN << "ClapTrap " << _name << RESET_COLOR << " has 0 energy point and can't attack " << std::endl;
+		std::cout << GREEN << "ClapTrap " << _name << YELLOW << " has 0 energy point and can't attack " << RESET_COLOR << std::endl;
 	}
 }
 
@@ -97,6 +100,8 @@ void ClapTrap::takeDamage(unsigned int amount) {
 	if (_hitPoints > 0) {
 		std::cout << GREEN << "ClapTrap " << _name << RESET_COLOR << " take "<< amount << " points of damage!" << std::endl;
 		this->_hitPoints -= amount;
+		std::cout << GREEN << "ClapTrap " << getName() << YELLOW << " " << getEnergyPoints() << " energy points remaining." << RESET_COLOR << std::endl;
+		std::cout << GREEN << "ClapTrap " << getName() << YELLOW << " " << getHitPoints() << " Hit points remaining." << RESET_COLOR << std::endl;
 	}
 	else
 		ClapTrap::~ClapTrap();

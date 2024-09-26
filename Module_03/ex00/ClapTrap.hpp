@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 18:07:45 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/09/25 16:01:07 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/09/26 15:56:30 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,14 @@
 
 #ifndef CLAPTRAP_HPP
 #define CLAPTRAP_HPP
+
+const char* const RED = "\033[31m";
+const char* const GREEN = "\033[32m";
+const char* const YELLOW = "\033[33m";
+const char* const BLUE = "\033[34m";
+const char* const MAGENTA = "\033[35m";
+const char* const CYAN = "\033[36m";
+const char* const RESET_COLOR = "\033[0m";
 
 class ClapTrap {
 
@@ -44,6 +52,12 @@ class ClapTrap {
 	int getHitPoints() const ;
 	int getEnergyPoints() const ;
 	std::string getName() const ;
+
+	// Setters
+	void setAttackDamage(int dmg) ;
+	void setHitPoints(int hp) ;
+	void setEnergyPoints(int ep) ;
+	void setName(std::string name) ;
 
 	// Functions
 	void attack(const std::string& target);
