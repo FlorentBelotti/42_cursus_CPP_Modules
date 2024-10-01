@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 14:50:00 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/09/30 15:09:33 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/10/01 16:26:32 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animals.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
 
 int main() {
 	const Animal* meta = new Animal();
@@ -18,8 +19,8 @@ int main() {
 	const Animal* cat = new Cat();
 
 	std::cout << YELLOW << "Animal type is " << BLUE << dog->getType() << RESET_COLOR << std::endl;
-	std::cout << YELLOW << "Animal type is " << MAGENTA << cat->getType() << RESET_COLOR << std::endl;
-	std::cout << YELLOW << "Animal type is " << GREEN << meta->getType() << RESET_COLOR << std::endl;
+	std::cout << YELLOW << "Animal type is " << CYAN << cat->getType() << RESET_COLOR << std::endl;
+	std::cout << YELLOW << "Animal type is " << MAGENTA << meta->getType() << RESET_COLOR << std::endl;
 	cat->makeSound();
 	dog->makeSound();
 	meta->makeSound();

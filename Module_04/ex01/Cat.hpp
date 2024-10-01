@@ -1,55 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   brain.hpp                                          :+:      :+:    :+:   */
+/*   cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 15:53:58 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/10/01 16:11:33 by fbelotti         ###   ########.fr       */
+/*   Created: 2024/10/01 15:42:57 by fbelotti          #+#    #+#             */
+/*   Updated: 2024/10/01 16:14:48 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#include "Animal.hpp"
+#include "Brain.hpp"
 #include "Color.hpp"
 
-#ifndef BRAIN_HPP
-#define BRAIN_HPP
+#ifndef CAT_HPP
+#define CAT_HPP
 
-class Brain {
+class Cat : public Animal {
 
 	private:
 
-	std::string ideas[100];
+	Brain* brain;
 
 	public:
 
 	// Constructor
-	Brain();
+	Cat();
+
+	// Copy constructor
+	Cat(const Cat& other);
 
 	// Destructor
-	~Brain();
+	~Cat();
 
-	// Copy Constructor
-	Brain(const Brain &other);
-
-	// Assignment Operator
-	Brain& operator=(const Brain &other) {
-		std::cout << YELLOW << "Brain assigned" << RESET_COLOR << std::endl;
+	// Assignment operator
+	Cat& operator=(const Cat& other) {
 		if (this != &other) {
-			for (int i = 0; i < 100; i++) {
-				ideas[i] = other.ideas[i];
-			}
+			Animal::operator=(other);
+			delete brain;
+			brain = new Brain(*other.brain);
 		}
 		return *this;
 	}
 
-	// Setters
-	void setIdea(int index, const std::string& idea);
+	// Functions
+	void makeSound() const;
 
-	// Getters
-	std::string getIdea(int index) const;
+	void setBrainIdea(int index, const std::string& idea);
+
+	std::string getBrainIdea(int index) const;
 };
 
 #endif

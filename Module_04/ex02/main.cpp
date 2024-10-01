@@ -6,27 +6,24 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 14:50:00 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/10/01 15:51:42 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/10/01 16:35:49 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Dog.hpp"
 
-int main() {
-	Animal* animals[4];
+#include "Dog.hpp"
+#include "Cat.hpp"
 
-	animals[0] = new Dog();
-	animals[1] = new Dog();
-	animals[2] = new Cat();
-	animals[3] = new Cat();
-	dynamic_cast<Dog*>(animals[0])->setBrainIdea(0, "Chase the ball");
-	dynamic_cast<Cat*>(animals[2])->setBrainIdea(0, "Catch the mouse");
-	std::cout << "idea of " << (animals[1])->getType() << " : " << dynamic_cast<Dog*>(animals[1])->getBrainIdea(0) << std::endl;
-	std::cout << "idea of " << (animals[0])->getType() << " : " << dynamic_cast<Dog*>(animals[0])->getBrainIdea(0) << std::endl;
-	std::cout << "idea of " << (animals[2])->getType() << " : " <<  dynamic_cast<Cat*>(animals[2])->getBrainIdea(0) << std::endl;
-	for (int i = 0; i < 4; i++) {
-		delete animals[i];
-	}
+int main() {
+	// Animal* animal = new Animal();
+	Animal* dog = new Dog();
+	Animal* cat = new Cat();
+	dog->makeSound();
+	cat->makeSound();
+	delete dog;
+	delete cat;
 	return 0;
 }
+
