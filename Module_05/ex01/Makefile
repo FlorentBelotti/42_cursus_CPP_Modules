@@ -6,11 +6,11 @@
 #    By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/17 16:56:14 by fbelotti          #+#    #+#              #
-#    Updated: 2024/10/05 13:58:03 by fbelotti         ###   ########.fr        #
+#    Updated: 2024/10/09 17:58:16 by fbelotti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Bureaucrat
+NAME = Form
 AUTHOR = Florent Belotti
 
 CXX = c++
