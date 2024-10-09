@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <fbelotti@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 17:07:54 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/10/09 17:15:56 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/10/09 17:59:42 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const {
     if (getGradeToExecute() <= executor.getGrade())
         throw AForm::GradeTooLowException();
     std::cout << YELLOW << "Drilling noises..." << RESET_COLOR << std::endl;
-    std::srand(std::time(nullptr));
+    std::srand(std::time(NULL));
     if (std::rand() % 2)
         std::cout << GREEN << _target << " has been robotomized successfully." << RESET_COLOR << std::endl;
     else
