@@ -5,62 +5,80 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbelotti <fbelotti@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 15:31:09 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/10/08 22:22:48 by fbelotti         ###   ########.fr       */
+/*   Created: 2024/10/09 17:08:19 by fbelotti          #+#    #+#             */
+/*   Updated: 2024/10/09 17:15:29 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main() {
+    try {
+        // Création des bureaucrates
+        Bureaucrat JohnSmith("John Smith", 42);
+        Bureaucrat HighRank("High Rank", 1);
+        Bureaucrat LowRank("Low Rank", 150);
 
-    // Bureaucrat tests
-    
-    std::cout << BLUE << "\t----- Bureaucrat tests ----\n" << std::endl; 
-    try {
-        Bureaucrat ToLow("John Doe", 0);
-    } catch (const Bureaucrat::GradeTooHighException& e) {
-        std::cerr << "Exception caught: " << e.what() << std::endl;
-    } catch (const Bureaucrat::GradeTooLowException& e) {
-        std::cerr << "Exception caught: " << e.what() << std::endl;
+        // Création des formulaires
+        ShrubberyCreationForm shrubberyForm("Form_24601");
+        RobotomyRequestForm robotomyForm("Captain Picard");
+        PresidentialPardonForm pardonForm("Richard Nixon");
+
+        // Test de la signature et de l'exécution des formulaires
+        std::cout << "Trying to execute ShrubberyCreationForm with LowRank:" << std::endl;
+        try {
+            shrubberyForm.beSigned(LowRank);
+            shrubberyForm.execute(LowRank);
+        } catch (std::exception &e) {
+            std::cerr << RED << "Exception caught: " << e.what() << RESET_COLOR << std::endl;
+        }
+
+        std::cout << "Trying to execute ShrubberyCreationForm with HighRank:" << std::endl;
+        try {
+            shrubberyForm.beSigned(HighRank);
+            shrubberyForm.execute(HighRank);
+        } catch (std::exception &e) {
+            std::cerr << RED << "Exception caught: " << e.what() << RESET_COLOR << std::endl;
+        }
+
+        std::cout << "Trying to execute RobotomyRequestForm with LowRank:" << std::endl;
+        try {
+            robotomyForm.beSigned(LowRank);
+            robotomyForm.execute(LowRank);
+        } catch (std::exception &e) {
+            std::cerr << RED << "Exception caught: " << e.what() << RESET_COLOR << std::endl;
+        }
+
+        std::cout << "Trying to execute RobotomyRequestForm with HighRank:" << std::endl;
+        try {
+            robotomyForm.beSigned(HighRank);
+            robotomyForm.execute(HighRank);
+        } catch (std::exception &e) {
+            std::cerr << RED << "Exception caught: " << e.what() << RESET_COLOR << std::endl;
+        }
+
+        std::cout << "Trying to execute PresidentialPardonForm with LowRank:" << std::endl;
+        try {
+            pardonForm.beSigned(LowRank);
+            pardonForm.execute(LowRank);
+        } catch (std::exception &e) {
+            std::cerr << RED << "Exception caught: " << e.what() << RESET_COLOR << std::endl;
+        }
+
+        std::cout << "Trying to execute PresidentialPardonForm with HighRank:" << std::endl;
+        try {
+            pardonForm.beSigned(HighRank);
+            pardonForm.execute(HighRank);
+        } catch (std::exception &e) {
+            std::cerr << RED << "Exception caught: " << e.what() << RESET_COLOR << std::endl;
+        }
+
+    } catch (std::exception &e) {
+            std::cerr << RED << "Exception caught: " << e.what() << RESET_COLOR << std::endl;
     }
-    try {
-        Bureaucrat ToHigh("Jane Doe", 151);
-    } catch (const Bureaucrat::GradeTooHighException& e) {
-        std::cerr << "Exception caught: " << e.what() << std::endl;
-    } catch (const Bureaucrat::GradeTooLowException& e) {
-        std::cerr << "Exception caught: " << e.what() << std::endl;
-    }
-    Bureaucrat JohnSmith("John Smith", 42);
-    std::cout << JohnSmith << std::endl;
-    JohnSmith.incrementGrade();
-    std::cout << "After incrementing, " << JohnSmith << std::endl;
-    JohnSmith.decrementGrade();
-    std::cout << "After decrementing, " << JohnSmith << RESET_COLOR << std::endl << std::endl;
-    
-    // Form tests
-    
-    std::cout << "\t----- Form tests -----\n" << std::endl;
-    try {
-        Form ToLow("Form1", 0, 42);
-    } catch (const Form::GradeTooHighException& e) {
-        std::cerr << RED << "Exception caught: " << e.what() << RESET_COLOR << std::endl;
-    } catch (const Form::GradeTooLowException& e) {
-        std::cerr << RED << "Exception caught: " << e.what() << RESET_COLOR << std::endl;
-    }
-    try {
-        Form TooHigh("Form1", 160, 160);
-    } catch (const Form::GradeTooHighException& e) {
-        std::cerr << RED << "Exception caught: " << e.what() << RESET_COLOR << std::endl;
-    } catch (const Form::GradeTooLowException& e) {
-        std::cerr << RED << "Exception caught: " << e.what() << RESET_COLOR << std::endl;
-    }
-    Form Form1("A38", 38, 38);
-    std::cout << YELLOW << Form1 << RESET_COLOR << std::endl;
-    Bureaucrat JohnDoe("John Doe", 35);
-    std::cout << JohnDoe << GREEN << std::endl;
-    Form1.beSigned(JohnDoe);
-    std::cout << YELLOW << Form1 << RESET_COLOR << std::endl;
     return 0;
 }
