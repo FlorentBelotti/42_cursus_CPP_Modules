@@ -6,7 +6,7 @@
 /*   By: fbelotti <fbelotti@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 16:51:03 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/10/10 17:14:48 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/10/10 17:25:40 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ class ScalarConverter {
     // Destructor
     ~ScalarConverter();
 
-    // Operator
-    ScalarConverter &operator=(ScalarConverter const &rhs);
-
     // Attributes
     std::string _str;
+
+    // Operator
+    ScalarConverter &operator=(ScalarConverter const &rhs);
 
     public :
 
