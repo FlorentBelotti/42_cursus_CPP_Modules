@@ -6,7 +6,7 @@
 /*   By: fbelotti <fbelotti@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 21:21:57 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/10/08 21:50:22 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/10/10 11:25:28 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,6 @@ class Form {
         // Methods
         void beSigned(Bureaucrat& bureaucrat);
                 
-        // Friend
-        friend std::ostream& operator<<(std::ostream& os, const Form& obj);
 };
+        
+std::ostream& operator<<(std::ostream& os, const Form& obj);

@@ -53,6 +53,6 @@ class AForm {
         void beSigned(Bureaucrat& bureaucrat);
         virtual void execute(Bureaucrat const & executor) const = 0;
 
-        // Friend
-        friend std::ostream& operator<<(std::ostream& os, const AForm& obj);
 };
+
+std::ostream& operator<<(std::ostream& os, const AForm& obj);

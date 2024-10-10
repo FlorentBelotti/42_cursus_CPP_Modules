@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
+/*   By: fbelotti <fbelotti@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 15:26:53 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/10/09 18:03:11 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/10/09 16:47:37 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm(){
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
     if (getGradeToExecute() <= executor.getGrade())
         throw AForm::GradeTooLowException();
-    std::ofstream outfile((_target + "_shrubbery").c_str());
+    std::ofstream outfile(_target + "_shrubbery");
     if (!outfile.is_open())
         throw std::ios_base::failure("Failed to open file");
     outfile << "       _-_\n"

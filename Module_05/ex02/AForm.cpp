@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbelotti <fbelotti@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 21:29:07 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/10/08 22:41:29 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/10/10 14:44:51 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,6 @@ const char* AForm::GradeTooLowException::what() const throw() {
     return "Grade is too low!";
 }
 
-// Friend
 std::ostream& operator<<(std::ostream& os, const AForm& obj) {
     os << "Form " << obj.getName() << ", signed: " << obj.getSigned() 
        << ", grade to sign: " << obj.getGradeToSign() 

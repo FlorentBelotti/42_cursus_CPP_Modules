@@ -6,7 +6,7 @@
 /*   By: fbelotti <fbelotti@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 14:20:55 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/10/08 15:51:05 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/10/10 14:44:40 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ void Bureaucrat::decrementGrade() {
     _grade++;
 }
 
-// Friend
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj) {
     os << obj.getName() << ", bureaucrat grade " << obj.getGrade();
     return os;

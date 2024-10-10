@@ -6,7 +6,7 @@
 /*   By: fbelotti <fbelotti@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 17:07:52 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/10/09 17:14:17 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/10/09 17:47:14 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,5 @@ void PresidentialPardonForm::execute(Bureaucrat const &executor) const {
     if (getGradeToExecute() <= executor.getGrade())
         throw AForm::GradeTooLowException();
 
-    std::cout << GREEN << _target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
+    std::cout << GREEN << _target << " has been pardoned by Zaphod Beeblebrox." << RESET_COLOR << std::endl;
 }

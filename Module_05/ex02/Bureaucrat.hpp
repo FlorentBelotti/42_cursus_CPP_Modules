@@ -6,7 +6,7 @@
 /*   By: fbelotti <fbelotti@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 14:02:26 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/10/08 15:50:56 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/10/10 11:26:14 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,6 @@ class Bureaucrat {
 	void incrementGrade();
 	void decrementGrade();
 	
-	// Friend
-	friend std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj);
 };
+
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj);

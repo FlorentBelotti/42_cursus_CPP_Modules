@@ -6,7 +6,7 @@
 /*   By: fbelotti <fbelotti@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 17:07:58 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/10/09 17:08:09 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/10/10 14:37:22 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,25 @@
 #include <string>
 
 class RobotomyRequestForm : public AForm {
-private:
+    
+    private:
+    
     std::string _target;
 
-public:
+    public:
+    
+    // Constructor
     RobotomyRequestForm(std::string const &target);
+
+    // Copy constructor
     RobotomyRequestForm(RobotomyRequestForm const &src);
+    
+    // Destructor
     ~RobotomyRequestForm();
 
-    RobotomyRequestForm &operator=(RobotomyRequestForm const &rhs);
-
+    // Methods
     void execute(Bureaucrat const &executor) const;
+    
+    // Operator
+    RobotomyRequestForm &operator=(RobotomyRequestForm const &rhs);
 };
