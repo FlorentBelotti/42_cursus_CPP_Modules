@@ -6,7 +6,7 @@
 /*   By: fbelotti <fbelotti@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 16:00:32 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/10/12 16:05:12 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/10/12 18:21:59 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,10 @@ class Serializer {
     Serializer(Serializer const &src);
     Serializer &operator=(Serializer const &rhs);
     ~Serializer();
+    std::string _str;
 
     public :
 
-    uintptr_t serialize(Data* ptr);
-    Data* deserialize(uintptr_t raw);
+    static uintptr_t serialize(Data* ptr);
+    static Data* deserialize(uintptr_t raw);
 };

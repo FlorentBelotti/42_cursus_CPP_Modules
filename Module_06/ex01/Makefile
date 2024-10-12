@@ -6,11 +6,11 @@
 #    By: fbelotti <fbelotti@student.42perpignan.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/17 16:56:14 by fbelotti          #+#    #+#              #
-#    Updated: 2024/10/10 16:47:06 by fbelotti         ###   ########.fr        #
+#    Updated: 2024/10/12 18:34:02 by fbelotti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ScalarConverter
+NAME = Serializer
 AUTHOR = Florent Belotti
 
 CXX = c++
