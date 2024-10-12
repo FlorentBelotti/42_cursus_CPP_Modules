@@ -6,7 +6,7 @@
 /*   By: fbelotti <fbelotti@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 17:06:51 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/10/11 20:47:38 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/10/12 13:07:40 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,8 +102,6 @@ void ScalarConverter::convert(const std::string &str) {
         conversionSuccess = true;
     } catch (const std::invalid_argument& e) {
         errorMessages += std::string(e.what()) + "\n";
-    } catch (const std::out_of_range&) {
-        errorMessages += "Error: out of range for int conversion\n";
     }
         
     if (!conversionSuccess) {
@@ -119,8 +117,6 @@ void ScalarConverter::convert(const std::string &str) {
             conversionSuccess = true;
         } catch (const std::invalid_argument& e) {
             errorMessages += std::string(e.what()) + "\n";
-        } catch (const std::out_of_range&) {
-            errorMessages += "Error: out of range for float conversion\n";
         }
     }
             
@@ -141,8 +137,6 @@ void ScalarConverter::convert(const std::string &str) {
             conversionSuccess = true;
         } catch (const std::invalid_argument& e) {
             errorMessages += std::string(e.what()) + "\n";
-        } catch (const std::out_of_range&) {
-            errorMessages += "Error: out of range for double conversion\n";
         }
     }
     
