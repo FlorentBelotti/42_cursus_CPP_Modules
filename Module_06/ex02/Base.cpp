@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 15:59:42 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/10/14 17:19:06 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/10/14 17:58:33 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ void identify(Base* p) {
         std::cout << BLUE << "Pointer type C detected" << RESET_COLOR << std::endl;
     else
         std::cout << RED << "Can't convert adress to C&" << RESET_COLOR << std::endl;
-
 }
 
 void identify(Base& p) {
