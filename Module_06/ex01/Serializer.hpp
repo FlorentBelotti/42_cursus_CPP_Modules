@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <fbelotti@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 16:00:32 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/10/12 18:21:59 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/10/14 17:15:52 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <cstdint>
+#include <stdint.h>
 #include <string>
 #include <iostream>
 

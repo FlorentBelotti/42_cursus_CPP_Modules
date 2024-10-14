@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <fbelotti@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 18:18:46 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/10/11 20:35:07 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/10/14 16:42:11 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main() {
 
     // Test avec un entier
     std::cout << YELLOW << "Test avec un entier:" << RESET_COLOR << std::endl;
-    ScalarConverter::convert("30");
+    ScalarConverter::convert("99999999999999999999999999999999999999999999999999");
     std::cout << std::endl;
 
     // Test avec un flottant

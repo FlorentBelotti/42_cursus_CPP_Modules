@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Base.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <fbelotti@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 15:59:42 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/10/14 16:36:10 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/10/14 17:19:06 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,20 +50,20 @@ void identify(Base& p) {
         A& a = dynamic_cast<A&>(p);
         (void)a;
         std::cout << YELLOW << "Adress type A detected" << RESET_COLOR << std::endl;
-    } catch (const std::bad_cast&) {
+    } catch (...) {
         std::cout << RED << "Can't convert adress to A&" << RESET_COLOR << std::endl; }
-    
+
     try {
         B& b = dynamic_cast<B&>(p);
         (void)b;
         std::cout << MAGENTA << "Adress type B detected" << RESET_COLOR << std::endl;
-    } catch (const std::bad_cast&) {
+    } catch (...) {
         std::cout << RED << "Can't convert adress to B&" << RESET_COLOR << std::endl; }
 
     try {
         C& c = dynamic_cast<C&>(p);
         (void)c;
         std::cout << BLUE << "Adress type C detected" << RESET_COLOR << std::endl;
-    } catch (const std::bad_cast&) {
+    } catch (...) {
         std::cout << RED << "Can't convert adress to C&" << RESET_COLOR << std::endl; }
 }
