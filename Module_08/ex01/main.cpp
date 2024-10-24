@@ -6,20 +6,19 @@
 /*   By: fbelotti <fbelotti@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 19:20:42 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/10/24 21:01:36 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/10/25 00:09:55 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 #include "Color.hpp"
 
-unsigned int generate_random_number() {
-    static bool initialized = false;
-    if (!initialized) {
-        std::srand(static_cast<unsigned int>(std::time(0)));
-        initialized = true;
-    }
-    return std::rand();
+void initializeRandom() {
+    std::srand(static_cast<unsigned int>(std::time(0)));
+}
+
+unsigned int getRandomUnsignedInt() {
+    return static_cast<unsigned int>(std::rand());
 }
 
 unsigned int convert_to_unsigned_int(const char* str) {
@@ -48,9 +47,10 @@ int main(int ac, char **av) {
         return 0;
     }
 
+    initializeRandom();
     Span span(n);
     for (unsigned int i = 0; i < n; i++) {
-        span.addNumber(generate_random_number());
+        span.addNumber(getRandomUnsignedInt());
     }
     
     try {
@@ -58,5 +58,11 @@ int main(int ac, char **av) {
         span.longestSpan();
     } catch (std::exception &e) {
         std::cout << RED << "Error: not enough numbers" << RESET_COLOR << std::endl;
+    }
+    
+    try {
+        span.addNumber(42);
+    } catch (std::exception &e) {
+        std::cout << RED << "Error: too many numbers" << RESET_COLOR << std::endl;
     }
 }
