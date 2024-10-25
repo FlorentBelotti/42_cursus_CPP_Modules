@@ -6,7 +6,7 @@
 /*   By: fbelotti <fbelotti@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 00:56:16 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/10/25 01:44:59 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/10/25 01:58:00 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,9 @@ int main()
             std::cout << *it << std::endl;
         ++it;
     }
+    std::stack<int> s(mstack);
+    std::cout << MAGENTA << "\n----- Copy -----" << RESET_COLOR << std::endl;
+    std::cout << YELLOW << "\nCopy size: " << RESET_COLOR << s.size() << std::endl;
+    std::cout << GREEN << "Top element: " << RESET_COLOR << s.top() << std::endl;
     return 0;
 }
