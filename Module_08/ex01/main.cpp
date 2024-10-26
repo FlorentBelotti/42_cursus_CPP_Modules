@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <fbelotti@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 19:20:42 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/10/25 00:09:55 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/10/26 12:42:59 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ unsigned int convert_to_unsigned_int(const char* str) {
 }
 
 int main(int ac, char **av) {
-    
+
     if (ac < 2 || ac > 2) {
         std::cout << RED << "Usage: ./span number" << RESET_COLOR << std::endl;
         return 0;
@@ -52,14 +52,15 @@ int main(int ac, char **av) {
     for (unsigned int i = 0; i < n; i++) {
         span.addNumber(getRandomUnsignedInt());
     }
-    
+
     try {
         span.shortestSpan();
         span.longestSpan();
     } catch (std::exception &e) {
         std::cout << RED << "Error: not enough numbers" << RESET_COLOR << std::endl;
     }
-    
+
+	std::cout << YELLOW << "\n----- Adding one more number -----\n" << RESET_COLOR << std::endl;
     try {
         span.addNumber(42);
     } catch (std::exception &e) {
