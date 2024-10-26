@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <fbelotti@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 14:50:31 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/10/25 22:35:29 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/10/26 14:44:14 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,14 @@ bool isNumber(const std::string& token) {
 }
 
 bool checkExpression(const std::string& expression) {
-    
+
     std::istringstream iss(expression);
     std::stack<int> stack;
     std::string strToken;
     int intToken;
-    
+
     while (iss >> strToken) {
-        
+
         if (isNumber(strToken)) {
             std::stringstream ss(strToken);
             ss >> intToken;
@@ -82,20 +82,20 @@ bool checkExpression(const std::string& expression) {
         std::cerr << RED << "Error: Too many numbers" << RESET_COLOR << std::endl;
         return false;
     }
-    
+
     return true;
-    
+
 }
 
 int SolveBdeWits(const std::string& expression) {
-    
+
     std::istringstream iss(expression);
     std::stack<int> stack;
     std::string strToken;
     int intToken;
-    
+
     while (iss >> strToken) {
-        
+
         if (isNumber(strToken)) {
             std::stringstream ss(strToken);
             ss >> intToken;
@@ -103,20 +103,20 @@ int SolveBdeWits(const std::string& expression) {
         }
 
         else if (isOperator(strToken)) {
-            
+
             int a = stack.top();
             stack.pop();
-            
+
             int b = stack.top();
             stack.pop();
-            
-            if (strToken == "+") 
+
+            if (strToken == "+")
                 stack.push(a + b);
-            else if (strToken == "-") 
+            else if (strToken == "-")
                 stack.push(a - b);
-            else if (strToken == "*") 
+            else if (strToken == "*")
                 stack.push(a * b);
-            else if (strToken == "/") 
+            else if (strToken == "/")
                 stack.push(a / b);
         }
     }
@@ -124,14 +124,14 @@ int SolveBdeWits(const std::string& expression) {
 }
 
 int main(int ac, char **av) {
-    
+
     if (ac != 2) {
-        std::cerr << RED << "Usage: ./RPN \"3 4 + 2 *\"" << std::endl;
+        std::cerr << RED << "Usage: ./RPN \"3 4 + 2 *\"" << RESET_COLOR << std::endl;
         return 1;
     }
-    
+
     std::string expression = av[1];
-    
+
     if (checkExpression(expression)) {
         int result = SolveBdeWits(expression);
         std::cout << YELLOW << "Result: " << RESET_COLOR << result << std::endl;
