@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
+/*   By: fbelotti <fbelotti@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 14:33:30 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/10/26 19:39:05 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/10/28 16:43:56 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,57 +43,6 @@ ou X est la valeur du bitcoin et Y est la valeur multiplie par le taux de change
 #include <algorithm>
 #include "Color.hpp"
 
-bool isNumber(const std::string& n) {
-    const char* ptr = n.c_str();
-    char* end;
-
-    double nb = std::strtod(ptr, &end);
-
-    if (nb >= 0 && nb < 10)
-		return true;
-	return false;
-}
-
-bool processLine(const std::string& line, std::map<std::string, double>& inputMap) {
-    for (int i = 0; i < 10; ++i) {
-        if ((i == 4 || i == 7)) {
-            if (line[i] != '-') return false;
-        } else {
-            if (!std::isdigit(line[i])) return false;
-        }
-    }
-    if (line[10] != ' ' || line[11] != '|' || line[12] != ' ')
-        return false;
-
-    std::string date = line.substr(0, 10);
-    std::string nb = line.substr(13);
-
-    if (!isNumber(nb))
-        return false;
-
-    inputMap[date] = std::strtod(nb.c_str(), NULL);
-    return true;
-}
-
-bool processInput(std::map<std::string, double>& inputMap) {
-    std::ifstream input("./input.txt");
-
-    if (input.is_open()) {
-        std::string line;
-        while (std::getline(input, line)) {
-            if (!processLine(line, inputMap)) {
-                std::cerr << RED << "Input error : line usage \"YYYY-MM-DD | x\"" << RESET_COLOR << std::endl;
-                return false;
-            }
-        }
-        return true;
-    }
-    else {
-        std::cerr << RED << "Input error : cannot open file" << RESET_COLOR << std::endl;
-        return false;
-    }
-}
-
 bool processCSV(const std::string& filename, std::map<std::string, double>& dataMap) {
     std::ifstream input(filename.c_str());
 
@@ -116,17 +65,41 @@ bool processCSV(const std::string& filename, std::map<std::string, double>& data
     }
 }
 
-void displayMap(const std::map<std::string, double>& dataMap) {
-    for (std::map<std::string, double>::const_iterator it = dataMap.begin(); it != dataMap.end(); ++it) {
-        std::cout << it->first << " => " << it->second << std::endl;
+bool isValidDate(const std::string& date) {
+    if (date.size() != 10) return false;
+    for (int i = 0; i < 10; ++i) {
+        if ((i == 4 || i == 7)) {
+            if (date[i] != '-') return false;
+        } else {
+            if (!std::isdigit(date[i])) return false;
+        }
     }
+    return true;
 }
 
-void processAndDisplayResults(const std::map<std::string, double>& inputMap, const std::map<std::string, double>& dataMap) {
-    for (std::map<std::string, double>::const_iterator it = inputMap.begin(); it != inputMap.end(); ++it) {
-        const std::string& date = it->first;
-        double value = it->second;
+bool isValidNumber(const std::string& number) {
+    for (std::string::const_iterator it = number.begin(); it != number.end(); ++it) {
+        if (!std::isdigit(*it) && *it != '.') return false;
+    }
+    return true;
+}
 
+void processAndDisplayResults(const std::map<std::string, std::string>& inputMap, const std::map<std::string, double>& dataMap) {
+    for (std::map<std::string, std::string>::const_iterator it = inputMap.begin(); it != inputMap.end(); ++it) {
+        const std::string& date = it->first;
+        const std::string& valueStr = it->second;
+
+        if (!isValidDate(date)) {
+            std::cerr << "Error: Invalid date format for " << date << std::endl;
+            continue;
+        }
+
+        if (!isValidNumber(valueStr)) {
+            std::cerr << "Error: Invalid number format for " << valueStr << std::endl;
+            continue;
+        }
+
+        double value = std::strtod(valueStr.c_str(), NULL);
         double exchangeRate = 0.0;
 
         std::map<std::string, double>::const_iterator rateIt = dataMap.find(date);
@@ -154,8 +127,32 @@ void processAndDisplayResults(const std::map<std::string, double>& inputMap, con
     }
 }
 
+void processLine(const std::string& line, std::map<std::string, std::string>& inputMap) {
+    std::string date = line.substr(0, 10);
+    std::string nb = line.substr(13);
+
+    inputMap[date] = nb;
+}
+
+bool processInput(std::map<std::string, std::string>& inputMap) {
+    std::ifstream input("./input.txt");
+
+    if (input.is_open()) {
+        std::string line;
+        while (std::getline(input, line)) {
+            processLine(line, inputMap);
+        }
+        return true;
+    }
+    else {
+        std::cerr << RED << "Input error : cannot open file" << RESET_COLOR << std::endl;
+        return false;
+    }
+}
+
 int main() {
-    std::map<std::string, double> inputMap;
+    
+    std::map<std::string, std::string> inputMap;
 	std::map<std::string, double> dataMap;
 
     if (!processInput(inputMap) || !processCSV("data.csv", dataMap)) {
