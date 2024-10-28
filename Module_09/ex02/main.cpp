@@ -6,7 +6,7 @@
 /*   By: fbelotti <fbelotti@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 14:56:44 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/10/25 15:07:35 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/10/28 17:47:25 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ Format de la sortie du programme :
 
 - La sequence non triee.
 - La sequence triee.
-- Le temps utiliser par l'algorithme pour trier la sequence et le nom du container utilise en premier.
-- Le temps utiliser par l'algorithme pour trier la sequence et le nom du container utilise en deuxieme.
+- Le temps utilise par l'algorithme pour trier la sequence et le nom du container utilise en premier.
+- Le temps utilise par l'algorithme pour trier la sequence et le nom du container utilise en deuxieme.
 
 Exemple de sortie :
 
@@ -33,3 +33,23 @@ Time to process a range of 5 elements with std::[..] : 0.00031 us
 Time to process a range of 5 elements with std::[..] : 0.00014 us
 
 */
+
+#include "PmergeMe.hpp"
+
+int main(int argc, char** av) {
+    
+    if (argc < 2) {
+        std::cerr << RED << "Usage: " << av[0] << " <sequence of positive integers>" << RESET_COLOR << std::endl;
+        return 1;
+    }
+    PmergeMe merge;
+
+    if (merge.parseArgs(av + 1))
+        return (1);
+    
+    if (merge.sortVector() || merge.sortList())
+      return (1);
+
+    merge.displayResult();
+    return 0;
+}
