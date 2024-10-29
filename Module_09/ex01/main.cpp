@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
+/*   By: fbelotti <fbelotti@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 14:50:31 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/10/26 14:44:14 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/10/29 15:59:37 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,10 +104,10 @@ int SolveBdeWits(const std::string& expression) {
 
         else if (isOperator(strToken)) {
 
-            int a = stack.top();
+            int b = stack.top();
             stack.pop();
 
-            int b = stack.top();
+            int a = stack.top();
             stack.pop();
 
             if (strToken == "+")
