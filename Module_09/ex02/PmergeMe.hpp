@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pMergeMe.hpp                                       :+:      :+:    :+:   */
+/*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbelotti <fbelotti@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 17:07:08 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/10/28 17:44:33 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/10/29 16:01:59 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <list>
 #include <cctype>
 #include <cstdlib>
+#include <climits>
 #include "Color.hpp"
 
 class PmergeMe
